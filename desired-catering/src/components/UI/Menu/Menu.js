@@ -5,23 +5,28 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-
+import RestaurantIcon from '@material-ui/icons/Restaurant';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 
 const Menu = (props) => {
   const classes = useStyles(props);
   const list = (anchor) => (
     <div
-      className={clsx(classes.list, {
+      className={  clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
       onClick={props.toggleMenu(false)}
       onKeyDown={props.toggleMenu(false)}
     >
-      <List>
+      <List 
+      >
         {['Services', 'About', 'Gallery', 'Contact'].map((text, index) => (
           <ListItem button key={text}>
+            <ListItemIcon className={classes.listIcon}>
+              <RestaurantIcon ß/>
+          </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -31,9 +36,11 @@ const Menu = (props) => {
   );
 
   return (
-    <div>
+    <div  >
         <React.Fragment>
-          <Drawer anchor="left" open={props.open} onClose={props.toggleMenu(false)}>
+          <Drawer 
+          className={classes.root}
+           anchor="left" open={props.open} onClose={props.toggleMenu(false)}>
             {list("left")}
           </Drawer>
         </React.Fragment>

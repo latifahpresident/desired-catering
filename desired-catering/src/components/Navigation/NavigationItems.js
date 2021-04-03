@@ -26,32 +26,23 @@ const Nav = props => {
                     <Facebook/>
                     <Instagram/>
                 </Grid>
-                {/* <Grid className={classes.linkContainer}>
+                <Grid className={classes.linkContainer}>
                     <Button className={classes.link} component={Link} to="/services" color="inherit">Services</Button>
                     <Button className={classes.link} component={Link} to="/about" color="inherit">About</Button>
                     <Grid className={classes.home} onClick={() => props.history.push("/")}><img className={classes.logo} src={logo} alt="desire catering"/></Grid>
                     <Button className={classes.link} component={Link} to="/gallery" color="inherit">Gallery</Button>
                     <Button className={classes.link} component={Link} to="/contact" color="inherit">Contact</Button>
-                </Grid> */}
- <Grid className={classes.linkContainer}>
-          <Button className={classes.link} component={Link} to="/services" color="inherit">Services</Button>
-          <Button className={classes.link} component={Link} to="/about" color="inherit">About</Button>
-          <Grid className={classes.home} onClick={() => props.history.push("/")}><img className={classes.logo} src={logo} alt="desire catering"/></Grid>
-          <Button className={classes.link} component={Link} to="/gallery" color="inherit">Gallery</Button>
-          <Button className={classes.link} component={Link} to="/contact" color="inherit">Contact</Button>
-          </Grid>
-          <Grid className={classes.homeBtn} onClick={() => props.history.push("/")}><img className={classes.logo} src={logo} alt="desire catering"/></Grid>
-
+                </Grid>
+                <Grid className={classes.homeBtn} onClick={() => props.history.push("/")}><img className={classes.logo} src={logo} alt="desire catering"/></Grid>
                 <Grid className={classes.order}>
                     <Button className={classes.orderBtn}>
                         Order
                     </Button>
-                </Grid>
-          <Grid className={classes.mobileIcons}>
-          <Facebook/>
-          <a className={classes.a} href="tel:1-707-590-5355"><Phone/></a>
-       {/* <Instagram/> */}
-       </Grid >
+                        </Grid>
+                <Grid className={classes.mobileIcons}>
+                    <Instagram/>
+                    <a className={classes.a} href="tel:1-707-590-5355"><Phone/></a>
+                </Grid >
             </Toolbar>
         </AppBar>
         <MenuDrawer toggleMenu={toggleMenu} open={open}/>

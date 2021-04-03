@@ -1,12 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
-import {darkColor, white,  redAccentColor} from './../../global-styles/global-styles';
+import {darkColor, white,  redAccentColor,  } from './../../global-styles/global-styles';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
     iconColor: {
       color: `${redAccentColor}`,
-      // color: "#B6613B",
   },
     title: {
       flexGrow: 1,
