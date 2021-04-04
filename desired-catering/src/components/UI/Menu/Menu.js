@@ -24,8 +24,8 @@ const Menu = (props) => {
       >
         {['Services', 'About', 'Gallery', 'Contact'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon className={classes.listIcon}>
-              <RestaurantIcon ß/>
+            <ListItemIcon>
+              <RestaurantIcon className={classes.icon} />
           </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>

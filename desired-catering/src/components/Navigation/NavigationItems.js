@@ -35,7 +35,7 @@ const Nav = props => {
                 </Grid>
                 <Grid className={classes.homeBtn} onClick={() => props.history.push("/")}><img className={classes.logo} src={logo} alt="desire catering"/></Grid>
                 <Grid className={classes.order}>
-                    <Button className={classes.orderBtn}>
+                    <Button className={classes.orderBtn} style={{color: "white"}}>
                         Order
                     </Button>
                         </Grid>

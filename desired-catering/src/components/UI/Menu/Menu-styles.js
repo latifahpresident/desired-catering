@@ -16,11 +16,10 @@ const useStyles = makeStyles((theme) => ({
     fullList: {
       width: 'auto',
     },
-    listIcon: {
+    icon: {
       color: "white",
       zIndex: 1000,
-     
-    },
+    }
   }));
 
   export { useStyles };
