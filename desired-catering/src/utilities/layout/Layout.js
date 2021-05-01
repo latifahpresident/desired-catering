@@ -1,18 +1,19 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import Aux from './../Aux/Aux';
 import Navigation from './../../containers/Navigation/Navigation';
 import Jumbotron from './../../components/UI/Jumbotron/Jumbotron';
+import Footer from './../../components/Footer/Footer';
 
 const Layout = (props) => {
     return (
-        <Aux>
+        <React.Fragment>
             <Navigation/>
             <Jumbotron/>
-             <main >
+             <main style={{width: "100%",}}>
                 {props.children}
             </main>
-        </Aux>
+            <Footer/>
+        </React.Fragment>
 
     )
 };

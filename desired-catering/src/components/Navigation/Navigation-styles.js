@@ -1,21 +1,47 @@
 import { makeStyles } from '@material-ui/core/styles';
 import {darkColor, white,  redAccentColor,  } from './../../global-styles/global-styles';
 const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
+    appBar: {
+      // border: "4px solid black",
+     
+      width: "100%",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      right: 0,
+      background: `${darkColor}`,
+
+      [theme.breakpoints.down('xs')]: {
+        // border: "3px solid hotpink",
+        width: "100%"
+    },
     },
     iconColor: {
-      color: `${redAccentColor}`,
+      color: `${white}`,
   },
-    title: {
-      flexGrow: 1,
-    },
- 
+
     toolbar: {
         backgroundColor: `${darkColor}`,
         display: "flex",
         justifyContent: "space-between",
-        // border: "1px solid teal",
+        // border: "2px solid teal",
+        padding: 0,
+        overflow: "hidden",
+        width: "100%",
+        "& .MuiToolbar-gutters": {
+          padding: 0,
+          
+        },
+        [theme.breakpoints.down('md')]: {
+          // border: "1px solid hotpink",
+          padding: "0 1rem",
+          width: "90%",
+      },
+      [theme.breakpoints.down('xs')]: {
+          // border: "1px solid hotpink",
+          padding: "0 1rem",
+          width: "100%",
+      },
     },
     menu: {
       //   border: "1px solid white",
@@ -28,14 +54,14 @@ const useStyles = makeStyles((theme) => ({
          },
     },
     linkContainer: {
-      //   border: "1px solid orange",
+        // border: "1px solid orange",
       [theme.breakpoints.down('sm')]: {
         // justifyContent: "center",
         display: "none"
        },
         display: "flex",
-        justifyContent: "space-between",
-        width: "50%",
+        justifyContent: "space-evenly",
+        width: "100%",
         
     },
     link: {
@@ -50,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
       [theme.breakpoints.down('sm')]: {
         display: "block",
+        paddingRight: "1.5rem"
        },
     },
     home: {
@@ -62,8 +89,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     logo: {
-      maxHeight: 50,
-      height: 50,
+      maxHeight: 60,
+      height: 60,
     },
     order: {
       [theme.breakpoints.down('xs')]: {

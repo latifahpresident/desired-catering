@@ -7,15 +7,6 @@ const Jumbotron = (props) => {
     const classes = useStyles(props);
     return (
         <React.Fragment>
-            <CardMedia
-                component='video'
-                className={classes.media}
-                image={PromoVid}
-                autoPlay
-                muted
-                loop
-                controls
-            /> 
                 <CardMedia
                 component='video'
                 className={classes.mobileMedia}

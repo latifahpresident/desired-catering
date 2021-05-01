@@ -22,7 +22,7 @@ const Menu = (props) => {
     >
       <List 
       >
-        {['Services', 'About', 'Gallery', 'Contact'].map((text, index) => (
+        {['Meet Chef Martin Eason', 'Services', 'Event Gallery', 'Inquiries'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               <RestaurantIcon className={classes.icon} />
