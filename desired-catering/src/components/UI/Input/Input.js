@@ -1,7 +1,11 @@
 import React from 'react';
 import {CssTextField} from './Input-styles';
-
+import { useStyles
+ } from './Input-styles';
 const Input = (props) => {
+    const classes = useStyles(props);
+
+    console.log("input props", props)
     let inputElement = null;
     switch (props.elementType) { // text, email, selector
         case('textfield'):
@@ -14,7 +18,12 @@ const Input = (props) => {
                 touched={props.touched}
                 className={props.className}
                 id={props.id}
-                placeholder={props.placeholder}
+                InputProps={{
+                    classes: {
+                        root: classes.label,
+                        root: classes.formInput
+                    }
+               }}
             />
             break;
         case ('textarea'):
@@ -25,7 +34,6 @@ const Input = (props) => {
             invalid={props.invalid}
             shouldValidate={props.shouldValidate}
             touched={props.touched}
-
             />
             break;
         default: inputElement = <CssTextField
@@ -35,16 +43,14 @@ const Input = (props) => {
             invalid={props.invalid}
             shouldValidate={props.shouldValidate}
             touched={props.touched}
-
         />
     }
-
     let validationError = null;
     if (props.invalid && props.touched) {
         validationError = <p>Please enter a valid value!</p>;
     }
     return (
-        <div>
+        <div  className={classes.formWrapper}>
             {inputElement}
             {validationError}
         </div>

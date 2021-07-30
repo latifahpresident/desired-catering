@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { background, white} from "./../../../global-styles/global-styles";
 
 const useStyles = makeStyles((theme) => ({
     menuButton: {
@@ -10,7 +11,10 @@ const useStyles = makeStyles((theme) => ({
 
         
     }, 
-  
+    submitBtn: {
+      backgroundColor: `${background}`,
+      color: `${white}`
+    }
    
   }));
 

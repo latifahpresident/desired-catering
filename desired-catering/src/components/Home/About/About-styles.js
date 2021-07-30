@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: `${accentColor}`,
         overflow: "hidden",
         height: 550,
+        zIndex: -3,
         // [theme.breakpoints.down('md')]: {
         //     width: "100%",
         //     border: "1px solid silver",

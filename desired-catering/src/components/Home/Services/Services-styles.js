@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         // border: "1px solid green",
         fontSize: "3rem",
         fontWeight: 800,
-        marginBottom: "5rem",
+        margin: "5rem 0",
     },
     wrapper: {
         display: "flex",
@@ -71,14 +71,17 @@ const useStyles = makeStyles((theme) => ({
         position: "absolute",
         backgroundColor: `${transparentBackground}`,
         // border: "1px solid hotpink",
-        width: "100%",
+        width: 350,
         height: 67,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         bottom: 0,
         [theme.breakpoints.down('xs')]: {
-            width: "100%",
+            width: "94%",
+            // backgroundColor: `${background}`,
+            backgroundColor: `${transparentBackground}`,
+            
     },
     },
     h1: {
@@ -89,16 +92,16 @@ const useStyles = makeStyles((theme) => ({
     },
     imgContainer: {
     //  border: "1px solid hotpink",
-
-        width: "100%",
+     cursor: "pointer",
+        // width: "100%",
         height: "100%",
         margin: "0 auto",
         display: "flex",
         justifyContent: "center",
     },
     img: {
-        width: "100%",
-        height: 403,
+        width: 350,
+        height: 304,
         margin: "0 auto",
     },
     overlay: {
@@ -106,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
         bottom: 0,
         background: "#ffffff99",
         color: `${darkColor}`, 
-        width: "93.7%",
+        width: 350,
         transition: ".5s ease",
         opacity: 0,
         fontSize: "20px",

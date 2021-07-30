@@ -1,8 +1,9 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
+import { Button, } from "@material-ui/core";
 import { useStyles } from './Button-styles';
 
-const Button = (props) => {
+const UIButton = (props) => {
     let buttonElement = null;
     const classes = useStyles(props);
     const {className, color, ariaLabel, onClick, } = props;
@@ -18,6 +19,18 @@ const Button = (props) => {
             >
                 {props.children}
             </IconButton>
+            break;
+        case('submitButton'):
+        buttonElement = 
+        <Button 
+            // edge="start" 
+            className={classes[className]} 
+            aria-label={ariaLabel} 
+            // onClick={onClick}
+            variant="contained"
+        >
+            {props.children}
+        </Button>
             break;
         // case('link'):
         //     buttonElement = 
@@ -41,4 +54,4 @@ const Button = (props) => {
     )
 };
 
-export default Button;
+export default UIButton;

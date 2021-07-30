@@ -1,4 +1,5 @@
 import React from "react";
+import {withRouter } from "react-router-dom";
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Grid, Typography, } from "@material-ui/core";
 import CorporateCateringPic from "./../../../assets/images/pineappledish.png";
@@ -44,7 +45,7 @@ const Services = (props) => {
                     <Grid className={classes.wrapper}>
             {data.map((item) => (
                 <ScrollAnimation className={classes.container} key={item.title}  animateIn="fadeIn" duration={2}>
-                        <Grid className={classes.imgContainer}>
+                        <Grid className={classes.imgContainer} onClick={() => props.history.push("/services")}>
                             <img className={classes.img} src={`${item.image}`} alt={item.title}/>
                         </Grid>
                         <Grid className={classes.title}>
@@ -58,4 +59,4 @@ const Services = (props) => {
     )
 };
 
-export default Services;
+export default withRouter(Services);

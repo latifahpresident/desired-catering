@@ -1,6 +1,8 @@
 import { withStyles, makeStyles, } from '@material-ui/core/styles';
+import { white, } from "./../../../global-styles/global-styles";
+import { TextField, } from "@material-ui/core";
 
-const CssTextField = withStyles({
+const CssTextField = withStyles((theme) => ({
     root: {
       '& label.Mui-focused': {
         color: 'white',
@@ -11,41 +13,32 @@ const CssTextField = withStyles({
       '& .MuiInput-underline:before': {
         borderBottomColor: `${white}`,
       },
-      '&:hover .MuiInput-underline': {
-        borderBottomColor: "orange",
-      },
+      
       '& .MuiOutlinedInput-root': {
         '& fieldset': {
           borderColor: 'white',
           
         },
-        '&:hover fieldset': {
-          borderColor: 'white',
-          color: `${white}`,
-          borderBottomColor: "orange",
-        },
+        
         '&.Mui-focused fieldset': {
           borderColor: 'white',
             color: `${white}`,
         },
-      
-        // '&:placeholder': {
-        //   color: "white",
-        // },
+     
       },  
       '&:hover fieldset': {
         borderColor: 'white',
       },
+      '&::-webkit-input-placeholder': { color: 'white' }
     },
-    // '&:placeholder': {
-    //   color: "white",
-    // },
-    // input: {
-    //   '&:placeholder': {
-    //     color: "white",
-    //   },
-    // }
-  })(TextField);
+    MuiTextFieldroot: {
+      [theme.breakpoints.down('xs')]: {
+        width: "85%",
+        border: "1px solid pink",
+        color: "white"
+    },
+    }
+  }))(TextField);
   
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -56,25 +49,46 @@ const CssTextField = withStyles({
       margin: "0 auto",
       justifyContent: "space-between",
       color: `${white}`,
+      [theme.breakpoints.down('xs')]: {
+        width: "90%",
+    },
     },
     margin: {
       margin: theme.spacing(1),
       width: "40%",
       color: `${white}`,
-      // '&:placeholder': {
-      //   color: `${white}`,
-      // },
       '&:hover': {
         color: `${white}`
-      }
+      },
+      [theme.breakpoints.down('xs')]: {
+        width: "90%",
     },
-    input: {
+    },
+    label: {
       color: "white",
-      '&:placeholder': {
+      fontSize: "1.2rem",
+      opacity: 1,
+      '&::placeholder': {
         color: "white",
   
       },
-    }
+    },
+    formWrapper: {
+      width: "100%",
+      [theme.breakpoints.down('xs')]: {
+        width: "85%",
+        margin: "0 auto"
+    },
+    }, 
+    formInput: {
+      // border: "1px solid pink",
+      color: "white",
+      [theme.breakpoints.down('xs')]: {
+        width: 300
+      
+    },
+     
+    },
+    
   }));
-
   export { useStyles, CssTextField}

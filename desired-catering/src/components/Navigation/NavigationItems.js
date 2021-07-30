@@ -23,7 +23,7 @@ const Nav = props => {
                
                 <Grid className={classes.linkContainer}>
                     <Button className={classes.link} component={Link} to="/meetthechef" color="inherit">Meet Chef Martin Eason</Button>
-                    <Button className={classes.link} component={Link} to="/servies" color="inherit">Services</Button>
+                    <Button className={classes.link} component={Link} to="/services" color="inherit">Services</Button>
                     <Grid className={classes.home} onClick={() => props.history.push("/")}><img className={classes.logo} src={logo} alt="desire catering"/></Grid>
                     <Button className={classes.link} component={Link} to="/gallery" color="inherit">Event Gallery</Button>
                     <Button className={classes.link} component={Link} to="/inquiries" color="inherit">Inquiries</Button>

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Input from './../../components/UI/Input/Input';
-import AuthWrapper from './../../components/Auth/Auth';
 import ContactFormComponent from '../../components/Home/Contact/Contact';
 
 const HomeContactForm = (props) => {
@@ -11,12 +10,11 @@ const HomeContactForm = (props) => {
                     elementType: 'textfield',
                     elementConfig: {
                         type: 'text',
-                        placeholder: 'Full Name'
+                        placeholder: 'Your Name'
                     },
                     value: '',
                     validation: {
                         required: true,
-                        minLength: 3,
                     },
                     valid: false,
                     touched: false
@@ -39,7 +37,6 @@ const HomeContactForm = (props) => {
             }
         }
     );
-
     const checkValidity = (value, rules) => {
         let isValid = true;
         if (rules.required) {
@@ -53,22 +50,18 @@ const HomeContactForm = (props) => {
         }
         return isValid;
     }
-
-    const [error, setError] = useState(false);
-    const [errorMsg, setErrorMsg] = useState('');
-
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const formData = {}
-        console.log("FORM DATA FROM HANDLER", formData)
-        for (let formElementIdentifier in state.controls) {
-            formData[formElementIdentifier] = state.controls[formElementIdentifier].value
-        }
-        // signUpWithEmailPassword(formData);
+    // const [error, setError] = useState(false);
+    // const [errorMsg, setErrorMsg] = useState('');
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const formData = {}
+    //     console.log("FORM DATA FROM HANDLER", formData)
+    //     for (let formElementIdentifier in state.controls) {
+    //         formData[formElementIdentifier] = state.controls[formElementIdentifier].value
+    //     }
+    //     // signUpWithEmailPassword(formData);
        
-    };
-
+    // };
     const inputChangeHandler = (event, controlName) => {
         const updatedControls = { //make copy of controls (email, password, etc)
             ...state.controls
@@ -83,7 +76,6 @@ const HomeContactForm = (props) => {
         updatedControls[controlName] = updatedFormElement // update the control to the user value
         setState({controls: updatedControls})
     };
-
     const formElementsArray = [];
     for (let key in state.controls) {
         formElementsArray.push({
@@ -91,7 +83,6 @@ const HomeContactForm = (props) => {
             config: state.controls[key]
         })
     }
-
     let form = formElementsArray.map(formElement => (
         <Input
             key={formElement.id}
@@ -101,25 +92,21 @@ const HomeContactForm = (props) => {
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
             touched={formElement.config.touched}
-            error={error}
+            // error={error}
             changed={ (event) => inputChangeHandler(event, formElement.id)}
         />
     ));
-
-    console.log("error msg", errorMsg)
     return (
         
         <React.Fragment>
-            <form onSubmit={handleSubmit} style={{width: `80%`}}>
-                    {form}
+           
                 <ContactFormComponent
                     className='primary'
                     text={'Sign up'}
                     size={'xl'}
+                    form={form}
                 />
-            </form>
         </React.Fragment>
     )
 };
-
 export default HomeContactForm;

@@ -24,7 +24,7 @@ html body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+color: rgba(250, 201, 21, 0.71);
   height: auto;
   width: auto;
   /* max-width: 900px; */

@@ -1,6 +1,5 @@
 import React from 'react';
 import CardMedia from '@material-ui/core/CardMedia';
-import PromoVid from './../../../assets/videos/Chef.mp4';
 import { useStyles } from './Jumbotron-styles';
 
 const Jumbotron = (props) => {
@@ -10,7 +9,7 @@ const Jumbotron = (props) => {
                 <CardMedia
                 component='video'
                 className={classes.mobileMedia}
-                image={PromoVid}
+                image={props.video}
                 autoPlay
                 controls
                 muted
